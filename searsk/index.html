@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Search Or Ask</title>
+    <link rel="icon" type="image/x-icon" href="./favicon.ico" />
+    <link href="./css/index.css" rel="stylesheet" />
+    <script src="./js/search.js" defer></script>
+  </head>
+  <body>
+    <!-- Main Content -->
+    <main class="search">
+      <section class="search__wrapper">
+        <!-- Логотип -->
+        <div class="search__logo">
+          <img src="./assets/search-or-ask-logo-fin.svg" alt="logo" />
+        </div>
+
+        <!-- Поисковая строка -->
+        <div class="search__input">
+          <input type="search" id="mainSearch" placeholder="Search or ask something" />
+          <div class="search__suggest">
+            <ul class="search__suggest-list"></ul>
+          </div>
+          <div class="search__input-buttons">
+            <button class="search__input-button search__input-button_search">
+              <img src="./assets/search/search-icon.svg" alt="" />
+              <span>Search</span>
+            </button>
+            <button class="search__input-button search__input-button_ai">
+              <img src="./assets/search/ai-icon.svg" alt="" />
+              <span>Ask AI</span>
+            </button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <!-- Ссылки -->
+      <nav class="footer__links">
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="contact.html">Contact Us</a>
+        <a href="terms.html">Terms and Conditions</a>
+      </nav>
+      <!-- Дисклеймер -->
+      <p>
+        Traffic to this site originates from social media campaigns. Specific
+        URL criteria must be met in order to display search ads.
+      </p>
+    </footer>
+  </body>
+</html>

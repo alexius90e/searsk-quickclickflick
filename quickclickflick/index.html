@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuickClickFlick</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background-color: #f4f4f4;
+        }
+
+        .logo {
+            margin-bottom: 20px;
+        }
+
+        .logo img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .search-container {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            max-width: 600px;
+            padding: 0 20px;
+        }
+
+        .search-container input[type="text"] {
+            width: 80%;
+            padding: 12px;
+            border: 2px solid rgb(30, 50, 100);
+            border-radius: 25px 0 0 25px;
+            font-size: 16px;
+            outline: none;
+            transition: border-color 0.3s ease;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .search-container input[type="text"]:focus {
+            border-color: rgb(20, 40, 80);
+        }
+
+        .search-container button {
+            width: 20%;
+            padding: 12px;
+            border: none;
+            background-color: rgb(30, 50, 100);
+            color: white;
+            border-radius: 0 25px 25px 0;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .search-container button:disabled {
+            background-color: #cccccc;
+            cursor: not-allowed;
+        }
+
+        .search-container button:hover:not(:disabled) {
+            background-color: rgb(20, 40, 80);
+        }
+
+        footer {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+            padding: 15px 0;
+            background-color: rgb(150, 120, 180);
+            color: white;
+            font-size: 14px;
+        }
+
+        .footer-content {
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        footer a, footer span {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: #f0f0f0;
+            text-decoration: underline;
+        }
+
+        @media (max-width: 600px) {
+            .logo {
+                margin-bottom: 10px;
+            }
+
+            .search-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .search-container input[type="text"] {
+                width: 100%;
+                border-radius: 25px;
+                margin-bottom: 10px;
+            }
+
+            .search-container button {
+                width: 100%;
+                border-radius: 25px;
+            }
+
+            footer {
+                position: relative;
+                margin-top: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="logo">
+        <img src="logo_bg.png" alt="QuickClickFlick Logo">
+    </div>
+    <form id="searchForm" class="search-container">
+        <input type="text" id="searchInput" placeholder="Enter your search term...">
+        <button type="submit" id="searchButton" disabled>Search</button>
+    </form>
+    <footer>
+        <div class="footer-content">
+            <a href="contact.html">Contact Us</a> | 
+            <a href="privacy.html">Privacy Policy</a> | 
+            <a href="terms.html">Terms of Use</a>
+            <span>&copy; 2025 QuickClickFlick.com</span>
+        </div>
+        <p>Traffic to this site originates from social media campaigns. Specific URL criteria must be met in order to display search ads.</p>
+    </footer>
+
+    <script>
+        const searchInput = document.getElementById('searchInput');
+        const searchButton = document.getElementById('searchButton');
+
+     
+        searchInput.addEventListener('input', function() {
+            if (searchInput.value.trim() === '') {
+                searchButton.disabled = true; 
+            } else {
+                searchButton.disabled = false; 
+            }
+        });
+
+     
+        document.getElementById('searchForm').addEventListener('submit', function(event) {
+            event.preventDefault(); 
+
+            const searchTerm = searchInput.value.trim();
+            if (searchTerm === '') {
+                return; 
+            }
+
+       
+            const searchUrl = `serp.html?keyword=${encodeURIComponent(searchTerm)}`;
+            window.location.href = searchUrl; 
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Search Or Ask</title>
+    <link rel="icon" type="image/x-icon" href="./favicon.ico" />
+    <link href="./css/index.css" rel="stylesheet" />
+    <link href="./css/ask.css" rel="stylesheet" />
+    <script src="./js/ask.js" defer></script>
+  </head>
+  <body>
+    <header class="ask__header">
+      <div class="container">
+        <div class="ask__header-logo">
+          <a href="index.html"
+            ><img src="./assets/search-or-ask-logo-fin.svg" alt="logo"
+          /></a>
+        </div>
+
+        <a class="ask__header-back" href="./">&lt; Back</a>
+      </div>
+    </header>
+
+    <main class="ask-main">
+      <div class="container">
+        <div class="ask-main__content"></div>
+
+        <div class="ask-main__input-wrapper">
+          <input
+            class="ask-main__input"
+            type="text"
+            placeholder="Ask something"
+          />
+          <button class="ask-main__button"></button>
+        </div>
+        <button id="clear"><img src="/assets/clear.svg"/> Clear</button>
+      </div>
+    </main>
+  </body>
+</html>

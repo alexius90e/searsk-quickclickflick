@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Search Results</title>
+    <link rel="icon" type="image/x-icon" href="./favicon.ico" />
+    <link href="./css/index.css" rel="stylesheet" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <div class="container">
+        <div class="header__logo">
+          <a href="index.html">
+            <img src="./assets/search-or-ask-logo-fin.svg" alt="logo" class="logo__img" />
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+      <div class="container">
+        <!-- Заголовок с ключевым словом -->
+        <h1 class="main__heading" id="search-query-header">
+          <span class="search-results-label">Search Results for:</span>
+          "<span id="search-query"></span>"
+        </h1>
+
+        <!-- Результаты поиска -->
+        <section class="search-results">
+          <ul class="search-results__list">
+            <li class="search-results__list-item">
+              <h2 class="search-results__list-item-title"><a href="#">Result Title 1</a></h2>
+
+              <div class="search-results__list-item-text">
+                <p class="search-results__list-item-text-item">
+                  This is a brief description of the first search result. It should
+                  be enough to give users an idea of what they can expect when they
+                  click on the link.
+                </p>
+
+                <p class="search-results__list-item-text-item">
+                  Lorem ipsum dolor sit amet.
+                </p>
+              </div>
+
+              <div class="search-results__list-item-more">
+                <a class="search-results__list-item-more-link" href="">Learn more</a>
+              </div>
+              
+            </li>
+
+            <li class="search-results__list-item">
+              <h2 class="search-results__list-item-title"><a href="#">Result Title 2</a></h2>
+
+              <div class="search-results__list-item-text">
+                <p class="search-results__list-item-text-item">
+                  This is a brief description of the first search result. It should
+                  be enough to give users an idea of what they can expect when they
+                  click on the link.
+                </p>
+
+                <p class="search-results__list-item-text-item">
+                  Lorem ipsum dolor sit amet.
+                </p>
+              </div>
+
+              <div class="search-results__list-item-more">
+                <a class="search-results__list-item-more-link" href="">Learn more</a>
+              </div>
+              
+            </li>
+
+            <li class="search-results__list-item">
+              <h2 class="search-results__list-item-title"><a href="#">Result Title 3</a></h2>
+
+              <div class="search-results__list-item-text">
+                <p class="search-results__list-item-text-item">
+                  This is a brief description of the first search result. It should
+                  be enough to give users an idea of what they can expect when they
+                  click on the link.
+                </p>
+
+                <p class="search-results__list-item-text-item">
+                  Lorem ipsum dolor sit amet.
+                </p>
+              </div>
+
+              <div class="search-results__list-item-more">
+                <a class="search-results__list-item-more-link" href="">Learn more</a>
+              </div>
+              
+            </li>
+          </ul>
+        </section>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <nav class="footer__links">
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="contact.html">Contact Us</a>
+        <a href="terms.html">Terms and Conditions</a>
+      </nav>
+      <p>
+        Traffic to this site originates from social media campaigns. Specific URL
+        criteria must be met in order to display search ads.
+      </p>
+    </footer>
+
+    <!-- JavaScript для получения ключевого слова из URL -->
+    <script>
+      // Получаем параметр "keyword" из URL
+      const urlParams = new URLSearchParams(window.location.search);
+      const keyword = urlParams.get('keyword');
+
+      if (keyword) {
+        // Отображаем ключевое слово в заголовке
+        document.getElementById('search-query').textContent = keyword;
+      } else {
+        // Если параметр "keyword" не найден, показываем сообщение об ошибке
+        document.getElementById('search-query-header').textContent =
+          'No search results found';
+      }
+    </script>
+  </body>
+</html>
