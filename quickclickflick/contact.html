@@ -5,156 +5,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contact Us - QuickClickFlick</title>
     <link rel="icon" type="image/png" href="favicon.png" />
-    <link rel="stylesheet" href="./css/index.css">
-    <style>
-      body {
-        margin: 0;
-        padding: 0;
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        background-color: #f4f4f4;
-      }
-
-      .banner {
-        width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 10px 0;
-      }
-
-      .banner img {
-        height: 80px;
-      }
-
-      .company-info {
-        width: 80%;
-        max-width: 800px;
-        background-color: white;
-        padding: 20px;
-        border-radius: 10px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        margin-top: 10px;
-        margin-bottom: 20px;
-        text-align: center;
-      }
-
-      .company-info h2 {
-        font-size: 24px;
-        margin-bottom: 10px;
-        color: rgb(30, 50, 100);
-      }
-
-      .company-info p {
-        font-size: 16px;
-        line-height: 1.6;
-        color: #333;
-        margin: 5px 0;
-      }
-
-      .content {
-        width: 80%;
-        max-width: 800px;
-        background-color: white;
-        padding: 20px;
-        border-radius: 10px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        margin-top: 10px;
-      }
-
-      .content h1 {
-        font-size: 28px;
-        margin-bottom: 20px;
-        color: rgb(30, 50, 100);
-      }
-
-      .content h2 {
-        font-size: 22px;
-        margin-top: 20px;
-        margin-bottom: 10px;
-        color: rgb(30, 50, 100);
-      }
-
-      .content p {
-        font-size: 16px;
-        line-height: 1.6;
-        color: #333;
-      }
-
-      .contact-form {
-        display: flex;
-        flex-direction: column;
-      }
-
-      .contact-form input,
-      .contact-form textarea {
-        margin-bottom: 15px;
-        padding: 10px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        font-size: 16px;
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      }
-
-      .contact-form textarea {
-        resize: vertical;
-        min-height: 150px;
-      }
-
-      .contact-form button {
-        padding: 10px;
-        background-color: rgb(30, 50, 100);
-        color: white;
-        border: none;
-        border-radius: 5px;
-        font-size: 16px;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Добавлен шрифт */
-      }
-
-      .contact-form button:hover {
-        background-color: rgb(20, 40, 80);
-      }
-
-      .contact-info {
-        margin-top: 20px;
-      }
-
-      .contact-info p {
-        margin: 5px 0;
-      }
-    </style>
+    <link rel="stylesheet" href="./css/index.css" />
   </head>
   <body>
-    <div class="banner">
-      <img src="logo_bg.png" alt="QuickClickFlick Logo" />
-    </div>
+    <main class="main">
+      <section class="contacts">
+        <div class="container">
+          <div class="banner">
+            <img
+              class="banner__image"
+              src="./assets/quickclickflick-logo.svg"
+              alt="QuickClickFlick Logo"
+            />
+          </div>
 
-    <div class="company-info">
-      <h2>Company Information</h2>
-      <p><strong>Company:</strong> Kodio d.o.o., tax id. no. 03191451</p>
-      <p><strong>Address:</strong> Svetlane Kane Radevic 1, Podgorica, Montenegro, 81000</p>
-      <p><strong>Phone:</strong> +382 (20) 650 802</p>
-      <p><strong>Email:</strong> support@quickclickflick.com</p>
-    </div>
+          <div class="company-info">
+            <h2 class="company-info__title">Company Information</h2>
+            <p class="company-info__text">
+              <strong>Company:</strong> Kodio d.o.o., tax id. no. 03191451
+            </p>
+            <p class="company-info__text">
+              <strong>Address:</strong> Svetlane Kane Radevic 1, Podgorica, Montenegro, 81000
+            </p>
+            <p class="company-info__text"><strong>Phone:</strong> +382 (20) 650 802</p>
+            <p class="company-info__text">
+              <strong>Email:</strong> support@quickclickflick.com
+            </p>
+          </div>
 
-    <div class="content">
-      <h1>Contact Us</h1>
-      <p>
-        We'd love to hear from you! Please fill out the form below, and we'll get back to you as
-        soon as possible.
-      </p>
+          <div class="contacts__content">
+            <h1 class="contacts__content-title">Contact Us</h1>
 
-      <form class="contact-form" action="#" method="post">
-        <input type="text" name="name" placeholder="Your Name" required />
-        <input type="email" name="email" placeholder="Your Email" required />
-        <textarea name="message" placeholder="Your Message" required></textarea>
-        <button type="submit">Send Message</button>
-      </form>
-    </div>
+            <p class="contacts__content-description">
+              We'd love to hear from you! Please fill out the form below, and we'll get back to you
+              as soon as possible.
+            </p>
+
+            <form class="contacts__contact-form" action="#" method="post">
+              <input type="text" name="name" placeholder="Your Name" required />
+              <input type="email" name="email" placeholder="Your Email" required />
+              <textarea name="message" placeholder="Your Message" required></textarea>
+              <button type="submit">Send Message</button>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
 
     <footer class="footer">
       <div class="container">

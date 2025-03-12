@@ -1,0 +1,58 @@
+.contacts {
+  &__content {
+    max-width: 800px;
+    margin: 10px auto 0;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba($color: #000000, $alpha: 0.05);
+    background-color: white;
+
+    &-title {
+      margin-bottom: 20px;
+      font-size: 28px;
+      color: #1e3264;
+    }
+
+    &-description {
+      font-size: 16px;
+      line-height: 160%;
+      color: #333333;
+    }
+  }
+
+  &__contact-form {
+    display: flex;
+    flex-direction: column;
+
+    & input,
+    & textarea {
+      margin-bottom: 15px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 16px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    & textarea {
+      resize: vertical;
+      min-height: 150px;
+    }
+
+    & button {
+      padding: 10px;
+      background-color: rgb(30, 50, 100);
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Добавлен шрифт */
+
+      &:hover {
+        background-color: rgb(20, 40, 80);
+      }
+    }
+  }
+}
