@@ -6,88 +6,74 @@
     <title>Search Results - QuickClickFlick</title>
     <link rel="icon" type="image/png" href="favicon.png" />
     <link rel="stylesheet" href="./css/index.css" />
-    <style>
-      body {
-        margin: 0;
-        padding: 0;
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        background-color: #f4f4f4;
-      }
-
-      .container {
-        max-width: 800px;
-        margin: 0 auto;
-        padding: 20px;
-      }
-
-      .search-container {
-        display: flex;
-        justify-content: center;
-        margin-bottom: 20px;
-      }
-
-      .search-container input[type='text'] {
-        width: 70%;
-        padding: 12px;
-        border: 2px solid rgb(30, 50, 100);
-        border-radius: 25px 0 0 25px;
-        font-size: 16px;
-        outline: none;
-        transition: border-color 0.3s ease;
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      }
-
-      .search-container input[type='text']:focus {
-        border-color: rgb(20, 40, 80);
-      }
-
-      .search-container button {
-        width: 30%;
-        padding: 12px;
-        border: none;
-        background-color: rgb(30, 50, 100);
-        color: white;
-        border-radius: 0 25px 25px 0;
-        cursor: pointer;
-        font-size: 16px;
-        transition: background-color 0.3s ease;
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      }
-
-      .search-container button:hover {
-        background-color: rgb(20, 40, 80);
-      }
-
-      .results {
-        background-color: white;
-        padding: 20px;
-        border-radius: 10px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      }
-
-      .results h2 {
-        margin-top: 0;
-        color: rgb(30, 50, 100);
-      }
-
-      .results p {
-        margin: 10px 0;
-      }
-    </style>
   </head>
   <body>
     <main class="main">
-      <div class="container">
-        <div class="search-container">
-          <input type="text" id="searchInput" placeholder="Enter your search term..." />
-          <button id="searchButton">Search</button>
-        </div>
+      <section class="search">
+        <div class="container">
+          <form class="search-container" id="searchForm">
+            <input type="text" id="searchInput" placeholder="Enter your search term..." />
+            <button id="searchButton">Search</button>
+          </form>
 
-        <div class="results">
-          <h2>Search Results for: <span id="keyword"></span></h2>
-          <p>Your search results will be displayed here.</p>
+          <div class="search-results">
+            <h1 class="search-results__heading" id="keyword"></h1>
+
+            <ul class="search-results__list">
+              <li class="search-results__list-item">
+                <h2 class="search-results__list-item-title"><a href="#">Result Title 1</a></h2>
+
+                <div class="search-results__list-item-text">
+                  <p class="search-results__list-item-text-item">
+                    This is a brief description of the first search result. It should be enough to
+                    give users an idea of what they can expect when they click on the link.
+                  </p>
+
+                  <p class="search-results__list-item-text-item">Lorem ipsum dolor sit amet.</p>
+                </div>
+
+                <div class="search-results__list-item-more">
+                  <a class="search-results__list-item-more-link" href="">Learn more</a>
+                </div>
+              </li>
+
+              <li class="search-results__list-item">
+                <h2 class="search-results__list-item-title"><a href="#">Result Title 2</a></h2>
+
+                <div class="search-results__list-item-text">
+                  <p class="search-results__list-item-text-item">
+                    This is a brief description of the first search result. It should be enough to
+                    give users an idea of what they can expect when they click on the link.
+                  </p>
+
+                  <p class="search-results__list-item-text-item">Lorem ipsum dolor sit amet.</p>
+                </div>
+
+                <div class="search-results__list-item-more">
+                  <a class="search-results__list-item-more-link" href="">Learn more</a>
+                </div>
+              </li>
+
+              <li class="search-results__list-item">
+                <h2 class="search-results__list-item-title"><a href="#">Result Title 3</a></h2>
+
+                <div class="search-results__list-item-text">
+                  <p class="search-results__list-item-text-item">
+                    This is a brief description of the first search result. It should be enough to
+                    give users an idea of what they can expect when they click on the link.
+                  </p>
+
+                  <p class="search-results__list-item-text-item">Lorem ipsum dolor sit amet.</p>
+                </div>
+
+                <div class="search-results__list-item-more">
+                  <a class="search-results__list-item-more-link" href="">Learn more</a>
+                </div>
+              </li>
+            </ul>
+          </div>
         </div>
-      </div>
+      </section>
     </main>
 
     <footer class="footer">
@@ -106,20 +92,28 @@
 
     <script>
       const urlParams = new URLSearchParams(window.location.search);
+      const keywordElem = document.getElementById('keyword');
       const keyword = urlParams.get('keyword');
 
-      if (keyword) {
-        document.getElementById('keyword').textContent = keyword;
+      if (keyword && keywordElem) {
+        keywordElem.textContent = `Ads related to ${keyword}`;
       } else {
-        document.getElementById('keyword').textContent = 'No keyword provided';
+        keywordElem.textContent = 'No search results found';
       }
 
-      document.getElementById('searchButton').addEventListener('click', function () {
-        const searchTerm = document.getElementById('searchInput').value.trim();
-        if (searchTerm) {
-          window.location.href = `serp.html?keyword=${encodeURIComponent(searchTerm)}`;
-        }
-      });
+      const searchFormElem = document.getElementById('searchForm');
+
+      if (searchFormElem) {
+        searchFormElem.addEventListener('submit', (event) => {
+          event.preventDefault();
+
+          const searchTerm = searchInput.value.trim();
+          if (searchTerm === '') return;
+
+          const searchUrl = `serp.html?keyword=${encodeURIComponent(searchTerm)}`;
+          window.location.href = searchUrl;
+        });
+      }
     </script>
   </body>
 </html>

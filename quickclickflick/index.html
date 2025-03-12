@@ -55,17 +55,19 @@
         }
       });
 
-      document.getElementById('searchForm').addEventListener('submit', function (event) {
-        event.preventDefault();
+      const searchForm = document.getElementById('searchForm');
 
-        const searchTerm = searchInput.value.trim();
-        if (searchTerm === '') {
-          return;
-        }
+      if (searchForm) {
+        searchForm.addEventListener('submit', (event) => {
+          event.preventDefault();
 
-        const searchUrl = `serp.html?keyword=${encodeURIComponent(searchTerm)}`;
-        window.location.href = searchUrl;
-      });
+          const searchTerm = searchInput.value.trim();
+          if (searchTerm === '') return;
+
+          const searchUrl = `serp.html?keyword=${encodeURIComponent(searchTerm)}`;
+          window.location.href = searchUrl;
+        });
+      }
     </script>
   </body>
 </html>
