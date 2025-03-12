@@ -1,0 +1,37 @@
+.footer {
+  display: block;
+  width: 100%;
+  padding: 20px 0;
+  margin: 20px 0 0;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  background-color: #9678b4;
+
+  & a,
+  & span {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+  }
+
+  & a:hover {
+    color: #f0f0f0;
+    text-decoration: underline;
+  }
+
+  &__content {
+    display: inline-block;
+    margin-bottom: 16px;
+  }
+
+  &__text {
+    margin: 0 auto;
+    max-width: 640px;
+    font-size: 16px;
+    line-height: 150%;
+    font-weight: 400;
+    text-align: center;
+  }
+}

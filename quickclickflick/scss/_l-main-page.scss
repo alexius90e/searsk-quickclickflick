@@ -1,0 +1,20 @@
+.main-page {
+  &__content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    min-height: calc(100dvh - 140px);
+  }
+
+  &__logo  {
+    margin: 0 auto 30px;
+
+    &-image {
+      display: block;
+      max-width: 100%;
+      width: 480px;
+      height: auto;
+    }   
+  }
+}
