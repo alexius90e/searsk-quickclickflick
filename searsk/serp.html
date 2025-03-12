@@ -24,10 +24,7 @@
     <main class="main">
       <div class="container">
         <!-- Заголовок с ключевым словом -->
-        <h1 class="main__heading" id="search-query-header">
-          <span class="search-results-label">Search Results for:</span>
-          "<span id="search-query"></span>"
-        </h1>
+        <h1 class="search-heading" id="search-query-header"></h1>
 
         <!-- Результаты поиска -->
         <section class="search-results">
@@ -37,20 +34,16 @@
 
               <div class="search-results__list-item-text">
                 <p class="search-results__list-item-text-item">
-                  This is a brief description of the first search result. It should
-                  be enough to give users an idea of what they can expect when they
-                  click on the link.
+                  This is a brief description of the first search result. It should be enough to
+                  give users an idea of what they can expect when they click on the link.
                 </p>
 
-                <p class="search-results__list-item-text-item">
-                  Lorem ipsum dolor sit amet.
-                </p>
+                <p class="search-results__list-item-text-item">Lorem ipsum dolor sit amet.</p>
               </div>
 
               <div class="search-results__list-item-more">
                 <a class="search-results__list-item-more-link" href="">Learn more</a>
               </div>
-              
             </li>
 
             <li class="search-results__list-item">
@@ -58,20 +51,16 @@
 
               <div class="search-results__list-item-text">
                 <p class="search-results__list-item-text-item">
-                  This is a brief description of the first search result. It should
-                  be enough to give users an idea of what they can expect when they
-                  click on the link.
+                  This is a brief description of the first search result. It should be enough to
+                  give users an idea of what they can expect when they click on the link.
                 </p>
 
-                <p class="search-results__list-item-text-item">
-                  Lorem ipsum dolor sit amet.
-                </p>
+                <p class="search-results__list-item-text-item">Lorem ipsum dolor sit amet.</p>
               </div>
 
               <div class="search-results__list-item-more">
                 <a class="search-results__list-item-more-link" href="">Learn more</a>
               </div>
-              
             </li>
 
             <li class="search-results__list-item">
@@ -79,20 +68,16 @@
 
               <div class="search-results__list-item-text">
                 <p class="search-results__list-item-text-item">
-                  This is a brief description of the first search result. It should
-                  be enough to give users an idea of what they can expect when they
-                  click on the link.
+                  This is a brief description of the first search result. It should be enough to
+                  give users an idea of what they can expect when they click on the link.
                 </p>
 
-                <p class="search-results__list-item-text-item">
-                  Lorem ipsum dolor sit amet.
-                </p>
+                <p class="search-results__list-item-text-item">Lorem ipsum dolor sit amet.</p>
               </div>
 
               <div class="search-results__list-item-more">
                 <a class="search-results__list-item-more-link" href="">Learn more</a>
               </div>
-              
             </li>
           </ul>
         </section>
@@ -107,8 +92,8 @@
         <a href="terms.html">Terms and Conditions</a>
       </nav>
       <p>
-        Traffic to this site originates from social media campaigns. Specific URL
-        criteria must be met in order to display search ads.
+        Traffic to this site originates from social media campaigns. Specific URL criteria must be
+        met in order to display search ads.
       </p>
     </footer>
 
@@ -118,13 +103,13 @@
       const urlParams = new URLSearchParams(window.location.search);
       const keyword = urlParams.get('keyword');
 
+
       if (keyword) {
         // Отображаем ключевое слово в заголовке
-        document.getElementById('search-query').textContent = keyword;
+        document.getElementById('search-query-header').textContent = `Ads related to ${keyword}`;
       } else {
         // Если параметр "keyword" не найден, показываем сообщение об ошибке
-        document.getElementById('search-query-header').textContent =
-          'No search results found';
+        document.getElementById('search-query-header').textContent = 'No search results found';
       }
     </script>
   </body>

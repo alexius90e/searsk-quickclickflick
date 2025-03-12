@@ -68,29 +68,9 @@ h1 {
   height: auto;
 }
 
-.main {
-  max-width: 47.5rem;
-  margin: 0 auto;
-  padding: 1rem;
-  font-size: 1rem;
-  line-height: 1.375rem;
-  font-weight: 400;
-}
-
-
-/* Стили для заголовка результатов поиска */
-.main__heading {
-  font-size: 1rem; /* Размер шрифта как у обычного текста */
-  line-height: 1.5rem;
-  font-weight: 700; /* Жирный шрифт */
-  text-align: center;
-  margin-bottom: 1.5rem;
-}
-
 .search-results-label {
   font-weight: 700; /* Жирный шрифт */
 }
-
 
 /* Footer */
 .footer {
@@ -99,7 +79,7 @@ h1 {
   font-size: 0.875rem;
   color: #666666;
   background-color: #f9f9f9;
-  margin-top: auto; 
+  margin-top: auto;
 }
 
 .footer__links {
@@ -121,7 +101,7 @@ h1 {
 
 .footer p {
   margin: 0;
-} 
+}
 
 .contact-form {
   max-width: 40rem;
@@ -162,11 +142,10 @@ h1 {
   background-color: #006c84;
 }
 
-
 .main {
   max-width: 47.5rem;
   margin: 0 auto;
-  padding: 1rem;
+  padding: 0 1rem;
   font-size: 1rem;
   line-height: 1.375rem;
   font-weight: 400;
@@ -666,7 +645,7 @@ h1 {
   width: 95%;
   font-size: 0.875rem;
   line-height: 1.125rem;
-    z-index: 10000;
+  z-index: 10000;
 }
 
 .search__suggest-list-item:first-child {
@@ -813,10 +792,10 @@ h1.recent__header {
   border-radius: 12.5rem;
   background: #00809d;
 }
-.recent{
+.recent {
   position: relative;
 }
-.remove-recent{
+.remove-recent {
   position: absolute;
   z-index: 200000;
   color: rgb(102, 102, 102);
@@ -824,5 +803,4 @@ h1.recent__header {
   border: 1px solid #eeeeee;
   cursor: pointer;
   background-color: white;
-
 }
